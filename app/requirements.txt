@@ -1,0 +1,11 @@
+beautifulsoup4==4.12.2
+bs4==0.0.1
+bz2file==0.98
+ciseau==1.0.1
+epub==0.5.2
+epub-conversion==1.0.15
+et-xmlfile==1.1.0
+openpyxl==3.1.2
+pyodbc==5.0.1
+soupsieve==2.5
+xml-cleaner==2.0.4

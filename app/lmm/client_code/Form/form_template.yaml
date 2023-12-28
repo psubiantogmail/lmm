@@ -1,0 +1,114 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: label_1
+    properties: {text: Life Ministry Epub Import, bold: true, role: headline, spacing_below: large,
+      spacing_above: large, align: center}
+    type: Label
+    layout_properties: {grid_position: 'EKVUDJ,CRRVKN'}
+  - name: label_description
+    properties: {text: Utility to import Epub data into excel to help scheduling Life and Ministry Meeting for midweek meeting of Jehovah's Witnesses,
+      role: title}
+    type: Label
+    layout_properties: {grid_position: 'WUNPQC,TDMYRZ'}
+  - name: label_language
+    properties: {role: title, text: 1. Choose a language}
+    type: Label
+    layout_properties: {grid_position: 'BEVLKE,GDAXUJ'}
+  - name: drop_down_language
+    properties: {}
+    type: DropDown
+    layout_properties: {grid_position: 'BEVLKE,WCWCMS'}
+    event_bindings: {change: drop_down_language_change}
+  - name: link_epub
+    properties: {text: link to epub page here, col_spacing: none}
+    type: Link
+    layout_properties: {grid_position: 'BEVLKE,WADRWH', full_width_row: true}
+  - name: label_1_get_epub
+    properties: {text: '2.
+
+        ', role: title}
+    type: Label
+    layout_properties: {grid_position: 'ALZMYN,AHKVJX'}
+  - name: button_1_get_epub
+    properties: {text: Get Epub, role: filled-button, align: left}
+    type: Button
+    layout_properties: {grid_position: 'ALZMYN,RDSKUR'}
+    event_bindings: {click: button_1_get_epub_click}
+  - name: label_2
+    properties: {text: -or-, bold: true, align: center, role: title}
+    type: Label
+    layout_properties: {grid_position: 'ALZMYN,QIGPBU'}
+  - name: file_loader_1
+    properties: {role: filled-button}
+    type: FileLoader
+    layout_properties: {grid_position: 'ALZMYN,VPUTEW'}
+  - name: label_result
+    properties: {text: 'Result :'}
+    type: Label
+    layout_properties: {grid_position: 'AYXRXJ,BMYHGX'}
+  - name: data_grid_result
+    properties:
+      columns:
+      - {id: JKSDUP, title: Column 1, data_key: column_1}
+      - {id: VJQQOR, title: Column 2, data_key: column_2}
+      - {id: OJLQEN, title: Column 3, data_key: column_3}
+      visible: true
+      spacing_below: medium
+      spacing_above: medium
+      background: theme:Secondary Container
+    type: DataGrid
+    components:
+    - name: repeating_panel_1
+      properties: {item_template: Form.RowTemplate1}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'VVYONH,GHNEJS', full_width_row: false}
+  - name: label_2_create_excel
+    properties: {text: '3.', role: title}
+    type: Label
+    layout_properties: {grid_position: 'BIXAHK,CEYQHY'}
+  - name: button_2_create_excel
+    properties: {text: Create Excel, role: filled-button, align: left}
+    type: Button
+    layout_properties: {grid_position: 'BIXAHK,HSJTXR'}
+  - name: spacer_4
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'BIXAHK,EKJOUS'}
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'BIXAHK,MSJCAS'}
+  - name: label_3_upload_to_sql
+    properties: {text: '4.', role: title}
+    type: Label
+    layout_properties: {grid_position: 'WTVGUY,GGAJTR'}
+  - name: button_upload_to_sql
+    properties: {text: Upload to Sql, role: filled-button, align: left}
+    type: Button
+    layout_properties: {grid_position: 'WTVGUY,TYRJTC'}
+  - name: spacer_5
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'WTVGUY,SFOLLK'}
+  - name: spacer_3
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'WTVGUY,BNCIRT'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - name: link_jworg
+    properties: {text: jw.org, url: 'https://www.jw.org/en'}
+    type: Link
+    layout_properties: {}
+    event_bindings: {click: link_jworg_click}
