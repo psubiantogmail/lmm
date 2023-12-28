@@ -2,6 +2,10 @@ name: Publish image to Github Hub
 on:
   [workflow_dispatch]
 
+env:
+  AZURE_WEBAPP_NAME: lmm
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
+
 jobs:
   publish_image:
     runs-on: ubuntu-latest
@@ -15,3 +19,9 @@ jobs:
       - name: publish
         run: |
           docker push ghcr.io/psubiantogmail/lmm-ghcr:latest
+      - name: pushtoazure
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH}}
