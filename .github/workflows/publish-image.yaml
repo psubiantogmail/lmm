@@ -13,4 +13,5 @@ jobs:
           docker build --file .\docker\app_server\Dockerfile -t ghcr.io/psubiantogmail/lmm-ghcr:latest .
       - name: publish
         run: |
+          docker login ghcr.io -u psubiantogmail -p ${{ secrets.DOCKER_PAT }}
           docker push ghcr.io/psubiantogmail/lmm-ghcr:latest
