@@ -1,4 +1,5 @@
 import anvil.server
+from urllib.request import urlopen
 
 
 @anvil.server.callable
@@ -8,11 +9,9 @@ def get_epub(site):
 
   from bs4 import BeautifulSoup
   from selenium.webdriver.support.ui import WebDriverWait as wait
-  soup = BeautifulSoup(urlopen(self.link_epub.url).read(), "html.parser")
+  soup = BeautifulSoup(urlopen(site).read(), "html.parser")
 
-    
-  
+  mwb_epub_issues = [i.get("data-issuedate") for i in soup.find_all("a", {"data-preselect": "epub"})]
 
-  
-  return "2. No Error"
+  return mwb_epub_issues
 

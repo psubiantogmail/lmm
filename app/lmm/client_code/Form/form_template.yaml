@@ -31,17 +31,17 @@ components:
     properties: {text: link to epub page here, col_spacing: none}
     type: Link
     layout_properties: {grid_position: 'BEVLKE,WADRWH', full_width_row: true}
-  - name: label_1_get_epub
-    properties: {text: '2.
+  - name: label_get_epub
+    properties: {text: '2. Download from site
 
         ', role: title}
     type: Label
     layout_properties: {grid_position: 'ALZMYN,AHKVJX'}
-  - name: button_1_get_epub
-    properties: {text: Get Epub, role: filled-button, align: left}
+  - name: button_download_page
+    properties: {text: Download, role: filled-button, align: center}
     type: Button
     layout_properties: {grid_position: 'ALZMYN,RDSKUR'}
-    event_bindings: {click: button_1_get_epub_click}
+    event_bindings: {click: button_download_page_click}
   - name: label_2
     properties: {text: -or-, bold: true, align: center, role: title}
     type: Label
@@ -50,6 +50,22 @@ components:
     properties: {role: filled-button}
     type: FileLoader
     layout_properties: {grid_position: 'ALZMYN,VPUTEW'}
+  - name: label_select_month
+    properties: {role: title, text: 3. Select issue date}
+    type: Label
+    layout_properties: {grid_position: 'PLSIRD,MPWEJI'}
+  - name: drop_down_issues
+    properties: {}
+    type: DropDown
+    layout_properties: {grid_position: 'PLSIRD,BLWHIW'}
+  - name: label_3
+    properties: {role: title, text: 4. Process}
+    type: Label
+    layout_properties: {grid_position: 'YAKSQG,CMSABN'}
+  - name: button_process
+    properties: {text: Process, role: filled-button}
+    type: Button
+    layout_properties: {grid_position: 'YAKSQG,XJIGCG'}
   - name: label_result
     properties: {text: 'Result :'}
     type: Label
@@ -70,11 +86,11 @@ components:
       properties: {item_template: Form.RowTemplate1}
       type: RepeatingPanel
     layout_properties: {grid_position: 'VVYONH,GHNEJS', full_width_row: false}
-  - name: label_2_create_excel
+  - name: label_create_excel
     properties: {text: '3.', role: title}
     type: Label
     layout_properties: {grid_position: 'BIXAHK,CEYQHY'}
-  - name: button_2_create_excel
+  - name: button_create_excel
     properties: {text: Create Excel, role: filled-button, align: left}
     type: Button
     layout_properties: {grid_position: 'BIXAHK,HSJTXR'}
@@ -86,7 +102,7 @@ components:
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'BIXAHK,MSJCAS'}
-  - name: label_3_upload_to_sql
+  - name: label_upload_to_sql
     properties: {text: '4.', role: title}
     type: Label
     layout_properties: {grid_position: 'WTVGUY,GGAJTR'}
