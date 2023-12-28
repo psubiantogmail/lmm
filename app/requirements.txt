@@ -1,3 +1,4 @@
+anvil-app-server==1.10.1
 beautifulsoup4==4.12.2
 bs4==0.0.1
 bz2file==0.98
@@ -9,3 +10,4 @@ openpyxl==3.1.2
 pyodbc==5.0.1
 soupsieve==2.5
 xml-cleaner==2.0.4
+selenium==4.16.0

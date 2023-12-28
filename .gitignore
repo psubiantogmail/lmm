@@ -21,3 +21,4 @@ cover/
 
 # Anvil
 .anvil-data
+venv
