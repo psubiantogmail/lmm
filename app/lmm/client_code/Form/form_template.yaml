@@ -66,6 +66,7 @@ components:
     properties: {text: Process, role: filled-button}
     type: Button
     layout_properties: {grid_position: 'YAKSQG,XJIGCG'}
+    event_bindings: {click: button_process_click}
   - name: label_result
     properties: {text: 'Result :'}
     type: Label

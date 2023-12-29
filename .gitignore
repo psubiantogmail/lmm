@@ -22,3 +22,6 @@ cover/
 # Anvil
 .anvil-data
 venv
+mwb.epub
+mwb.html
+mwb_*.xlsx
