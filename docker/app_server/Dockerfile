@@ -1,5 +1,7 @@
 FROM --platform=linux/amd64 python:3-buster
 
+EXPOSE 80
+
 RUN apt-get -yyy update && apt-get -yyy install software-properties-common && \
     wget -O- https://apt.corretto.aws/corretto.key | apt-key add - && \
     add-apt-repository 'deb https://apt.corretto.aws stable main'
